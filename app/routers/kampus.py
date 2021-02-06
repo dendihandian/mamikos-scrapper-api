@@ -4,14 +4,13 @@ from app.helpers.helper import get_page_source
 
 router = APIRouter()
 
-@router.get("/area")
-async def area_list():
-    page_source = get_page_source("/area")
+
+@router.get("/kampus")
+async def kampus_list():
+    page_source = get_page_source("/kampus")
     soup = BeautifulSoup(page_source, 'html.parser')
 
     ul_list = soup.find_all('ul', class_="area-group-list-item")
-
-    # print(ul_list)
 
     data = list()
 
