@@ -1,4 +1,4 @@
 .venv
 
 result.html
-geckodriver
+geckodriver.log
