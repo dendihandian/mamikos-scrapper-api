@@ -14,4 +14,4 @@ pipenv run uvicorn main:app --reload
 
 ## Documentation
 
-[http://localhost:8000/docs](http://localhost:8000/docs)
+Run the project and go to [http://localhost:8000/docs](http://localhost:8000/docs)
