@@ -18,26 +18,26 @@ async def kost_list():
 
     for col_custom in listing_div:
         try:
-            room_card = col_custom.find('div', class_='room-card')
-            room_cover_mage = room_card.find('img', class_='room-cover-image')
-            room_information_wrapper = room_card.find('div', class_='room-information-wrapper')
-            room_title = room_information_wrapper.find('div', class_='room-title')
-            room_tag_wrapper = room_information_wrapper.find('div', class_='room-tag-wrapper')
-            room_location = room_information_wrapper.find('div', class_='room-location')
-            room_meta_section = room_information_wrapper.find('div', class_='room-meta-section')
-            real_price_container = room_meta_section.find('div', class_='real-price-container')
-            real_price = real_price_container.find('p', class_='real-price')
-            real_price_unit = real_price_container.find('p', class_='real-price-unit')
-            room_meta = room_meta_section.find('div', class_='room-meta')
-            rating_span = room_meta.find('span')
+            div_room_card = col_custom.find('div', class_='room-card')
+            img_room_cover_mage = div_room_card.find('img', class_='room-cover-image')
+            div_room_information_wrapper = div_room_card.find('div', class_='room-information-wrapper')
+            div_room_title = div_room_information_wrapper.find('div', class_='room-title')
+            div_room_tag_wrapper = div_room_information_wrapper.find('div', class_='room-tag-wrapper')
+            div_room_location = div_room_information_wrapper.find('div', class_='room-location')
+            div_room_meta_section = div_room_information_wrapper.find('div', class_='room-meta-section')
+            div_real_price_container = div_room_meta_section.find('div', class_='real-price-container')
+            p_real_price = div_real_price_container.find('p', class_='real-price')
+            p_real_price_unit = div_real_price_container.find('p', class_='real-price-unit')
+            div_room_meta = div_room_meta_section.find('div', class_='room-meta')
+            span_rating = div_room_meta.find('span')
 
             data.append({
-                'display_name':  room_title.h3.text.strip(),
-                'gender': room_tag_wrapper.label.text.strip(),
-                'location': room_location.span.text.strip(),
-                'price': real_price.text.strip() + real_price_unit.text.strip(),
-                'image': room_cover_mage['src'],
-                'rating': float(rating_span.text.strip())
+                'display_name':  div_room_title.h3.text.strip(),
+                'gender': div_room_tag_wrapper.label.text.strip(),
+                'location': div_room_location.span.text.strip(),
+                'price': p_real_price.text.strip() + p_real_price_unit.text.strip(),
+                'image': img_room_cover_mage['src'],
+                'rating': float(span_rating.text.strip())
             })
         except:
             pass
