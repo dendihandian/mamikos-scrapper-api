@@ -16,15 +16,16 @@ def get_page_source(url_context):
 
     path_to_file = os.path.join(sys.path[0], 'page_resources', f'{current_date}{url_context_slug}.html')
     if os.path.exists(path_to_file):
-        with open(f'page_resources/{current_date}{url_context_slug}.html', 'r') as file:
+        with open(f'page_resources/{current_date}{url_context_slug}.html', 'r', encoding="utf-8") as file:
             page_source = file.read()
     else:
         url = f'https://www.mamikos.com{url_context}'
         driver.get(url)
         page_source = driver.page_source
-        f = open(f'page_resources/{current_date}{url_context_slug}.html', 'w')
-        f.write(page_source)
-        f.close()
+
+        with open(f'page_resources/{current_date}{url_context_slug}.html', 'w', encoding="utf-8") as file:
+            file.write(page_source)
+
         driver.close()
 
     return page_source

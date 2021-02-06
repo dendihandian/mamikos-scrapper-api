@@ -43,3 +43,9 @@ async def kost_list():
             pass
 
     return data
+
+@router.get('/kost/{kost_slug}')
+async def kost_detail(kost_slug):
+    return {
+        'slug': kost_slug
+    }
