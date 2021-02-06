@@ -22,8 +22,8 @@ async def testimonial_list():
 
         data.append({
             'image': div_owner_image['data-src'],
-            'owner': div_owner_info.p.text.strip(),
-            'kost': div_owner_info.h3.text.strip(),
+            'owner': div_owner_info.h3.text.strip(),
+            'kost': div_owner_info.p.text.strip(),
             'content': div_testimonial_content.text.strip()
         })
 
