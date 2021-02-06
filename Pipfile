@@ -7,6 +7,9 @@ name = "pypi"
 fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 autopep8 = "*"
+selenium = "*"
+webdriver-manager = "*"
+bs4 = "*"
 
 [dev-packages]
 
