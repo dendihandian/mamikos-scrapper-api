@@ -18,7 +18,14 @@ def get_page_source(url_context):
     if os.path.exists(path_to_file):
         with open(f'page_resources/{current_date}{url_context_slug}.html', 'r', encoding="utf-8") as file:
             page_source = file.read()
+
+        # files = [f for f in listdir(os.path.join(sys.path[0], 'page_resources'))]
+
     else:
+
+        if not os.path.exists(os.path.join(sys.path[0], 'page_resources')):
+            os.makedirs(os.path.join(sys.path[0], 'page_resources'))
+
         url = f'https://www.mamikos.com{url_context}'
         driver.get(url)
         page_source = driver.page_source
