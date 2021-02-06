@@ -12,4 +12,5 @@ f = open('result.html', 'w')
 f.write(driver.page_source)
 f.close()
 
+driver.close()
 # print(driver.page_source)
